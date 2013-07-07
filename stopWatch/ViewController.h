@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
 
+
+    NSInteger totalTakt;
+    NSInteger time_lap;
+    Boolean Clicked;
+
+    
+    NSTimer *timer;
+}
 @end
