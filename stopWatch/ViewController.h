@@ -11,11 +11,11 @@
 @interface ViewController : UIViewController{
 
 
-    NSInteger totalTakt;
-    NSInteger time_lap;
-    Boolean Clicked;
+ //   NSInteger totalTime;
+ //   NSInteger timeLapPoint;
+ //   Boolean Clicked;
 
     
-    NSTimer *timer;
+  //  NSTimer *timer;
 }
 @end

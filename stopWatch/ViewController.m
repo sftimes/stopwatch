@@ -10,7 +10,17 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *sysTime;
+{
+    NSInteger totalTime;
+    NSInteger timeLapPoint;
+    Boolean Clicked;
+    
+    
+    NSTimer *timer;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *NowTime;//显示当前时间的标签
+
 
 @property (nonatomic,retain) UIButton *leftButton;
 @property (nonatomic,retain) UIButton *rightButton;
@@ -34,9 +44,9 @@
 @synthesize rightButton;
 @synthesize tableView;
 
-//@synthesize timer;
-@synthesize sysTime;
-//@synthesize time_lap;
+//@synthesize systime;
+
+@synthesize timeLapPoint;
 
 
 
@@ -88,10 +98,11 @@
     
     if (Clicked) //reset
     {
-        time = time_lap = 0.0;
-        sysTime = [NSString stringWithFormat:@"00:00.0"];
-        [label setText:sysTime];
-        list_time = list_lap = nil;
+        totalTime = timeLapPoint = 0.0;
+        self.NowTime = [NSString stringWithFormat:@"00:00.0"];
+  //      [lable setText:sysTime];
+        
+      //  list_time = list_lap = nil;
         count = 1;
         [tableview reloadData];
         
@@ -115,8 +126,10 @@
     
 }
 
+
+
 //与第一个相关
-- (float) updateTime
+/*- (float) updateTime
 {
     time+=0.1;
     time_lap +=0.1;
@@ -126,32 +139,10 @@
     return time;
 }
 
+*/
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [list_time count];
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *tableViewIdentifier = @"tableViewIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:tableViewIdentifier];
-    }
-    
-    NSUInteger row = [indexPath row];
-    
-    cell.detailTextLabel.text = [list_time objectAtIndex:row];
-    cell.detailTextLabel.textColor = [UIColor blackColor];
-    cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:25.0];
-    cell.detailTextLabel.textAlignment = UITextAlignmentCenter;
-    
-    NSString *text = [[NSString alloc]initWithFormat:@"lap %@", [list_lap objectAtIndex:row]];
-    cell.textLabel.text = text;
-    return cell;
-}
 
 
 @end

@@ -84,6 +84,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="NowTime" destination="GsB-MW-XaN" id="iga-uq-ube"/>
                         <outlet property="sysTime" destination="GsB-MW-XaN" id="VlT-co-eyK"/>
                         <outlet property="tableViewCell" destination="OSa-bm-2PX" id="3GD-IV-E8z"/>
                         <outletCollection property="tableView" destination="KvM-ja-cw4" id="Tug-CT-QFd"/>
@@ -108,7 +109,7 @@
             <relationships>
                 <relationship kind="action" name="leftButton:" candidateClass="UIButton"/>
                 <relationship kind="action" name="rightButton:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sysTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="NowTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableViewCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outletCollection" name="tableView" candidateClass="UITableView"/>
             </relationships>
